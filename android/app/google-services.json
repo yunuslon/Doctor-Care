@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "564243550384",
+    "firebase_url": "https://mydoctor-437a6-default-rtdb.firebaseio.com",
+    "project_id": "mydoctor-437a6",
+    "storage_bucket": "mydoctor-437a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:564243550384:android:cd40acd53aa0866881ab75",
+        "android_client_info": {
+          "package_name": "com.doctorcare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "564243550384-u74pt98e66c44meptc312rhppsb4t2g0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXCj-zSryF6RFzLcHRB9Y1Jqxx-EWOm3E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "564243550384-u74pt98e66c44meptc312rhppsb4t2g0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:564243550384:android:fa73950b1842835c81ab75",
+        "android_client_info": {
+          "package_name": "com.myawesomeproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "564243550384-u74pt98e66c44meptc312rhppsb4t2g0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXCj-zSryF6RFzLcHRB9Y1Jqxx-EWOm3E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "564243550384-u74pt98e66c44meptc312rhppsb4t2g0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -6,7 +6,8 @@ import { RootStackList } from '@nav/RootStackList';
 import { useNavigation } from '@react-navigation/native';
 import { ScrollView } from 'react-native';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
-
+import database from '@react-native-firebase/database';
+import auth from '@react-native-firebase/auth';
 
 const Register: React.FC = () => {
     type RegisterScreenProp = NativeStackNavigationProp<RootStackList, 'Register'>;
@@ -19,23 +20,28 @@ const Register: React.FC = () => {
         email: '',
         password: ''
     })
-    const CreateUser = (eml: string, pass: string) => {
-        // auth().createUserWithEmailAndPassword(eml, pass)
-        //     .then((res) => {
-        //         showMessage('Validate success', 'success');
-        //         console.log(res);
-
-        //         // navigation.navigate('UploadPhoto')
-        //     })
-        //     .catch(error => {
-        //         if (error.code === 'auth/email-already-in-use') {
-        //             showMessage('That email address is already in use!');
-        //         }
-        //         if (error.code === 'auth/invalid-email') {
-        //             showMessage('That email address is invalid!');
-        //         }
-        //         console.error(error);
-        //     });
+    const CreateUser = () => {
+        auth().createUserWithEmailAndPassword(form.email, form.password)
+            .then((res) => {
+                database().ref('/users/' + res.user.uid + '/')
+                    .set(form)
+                    .then((res) => {
+                        showMessage('Validate success', 'success');
+                        console.log(res);
+                        navigation.navigate('UploadPhoto')
+                    }).catch((err) => {
+                        console.log(err);
+                    });
+            })
+            .catch(error => {
+                if (error.code === 'auth/email-already-in-use') {
+                    showMessage('That email address is already in use!');
+                }
+                if (error.code === 'auth/invalid-email') {
+                    showMessage('That email address is invalid!');
+                }
+                console.error(error);
+            });
     }
     const onsubmit = () => {
         var valEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -52,7 +58,7 @@ const Register: React.FC = () => {
         } else {
             setErrPass('');
             seterrEmail('');
-            CreateUser(form.email, form.password)
+            CreateUser()
         }
     };
     return (
