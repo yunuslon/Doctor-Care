@@ -8,8 +8,9 @@ import ProfilePic from './ProfilePic';
 import Konsultasi from './Konsultasi';
 import StarV from './StarV';
 import News from './News';
+import Loading from './Loading';
 
 export {
-    Button, Label, Item, Input, Appbar,
+    Button, Label, Item, Input, Appbar, Loading,
     ProfilePic, Profile, Konsultasi, StarV, News
 }

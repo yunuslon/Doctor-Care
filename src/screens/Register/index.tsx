@@ -6,8 +6,7 @@ import { RootStackList } from '@nav/RootStackList';
 import { useNavigation } from '@react-navigation/native';
 import { ScrollView } from 'react-native';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
-import database from '@react-native-firebase/database';
-import auth from '@react-native-firebase/auth';
+import { auth, database } from '../../config'
 
 const Register: React.FC = () => {
     type RegisterScreenProp = NativeStackNavigationProp<RootStackList, 'Register'>;

@@ -4,9 +4,7 @@ export type RootStackList = {
     Login: undefined;
     Register: undefined;
     UploadPhoto: undefined;
-    Doctor: undefined;
-    Hospital: undefined;
-    Message: undefined;
+    MyTabs: undefined;
     ListDoctor: {
         titleAppbar: string;
     };
